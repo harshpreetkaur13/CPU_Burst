@@ -1,0 +1,27 @@
+#include<stdio.h>
+3include<unistd.h>
+
+struct process
+{
+  int arrival_t,burst_t,waiting_t,taround_t;
+  char name[10];
+};
+
+struct process initialize(int arrival_t,int burst_t,int name)
+{
+  struct process obj;
+  obj.burst_t=burst_t;
+  obj.arrival_t=arrival_t;
+  printf(obj.name,"P%d",name+1);
+  return obj;
+}
+
+int main()
+{
+   FILE *f=fopen(FILE_NAME,"r");
+   
+   if(!f)
+   {
+     printf("File open error! \n");
+   }
+}
