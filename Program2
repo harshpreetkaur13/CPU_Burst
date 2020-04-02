@@ -1,27 +1,31 @@
 #include<stdio.h>
-3include<unistd.h>
-
-struct process
-{
-  int arrival_t,burst_t,waiting_t,taround_t;
-  char name[10];
-};
-
-struct process initialize(int arrival_t,int burst_t,int name)
-{
-  struct process obj;
-  obj.burst_t=burst_t;
-  obj.arrival_t=arrival_t;
-  printf(obj.name,"P%d",name+1);
-  return obj;
-}
+#include<unistd.h>
+#include<string.h>
 
 int main()
 {
-   FILE *f=fopen(FILE_NAME,"r");
+   FILE *fp=fopen("CPU_BURST.txt","r");
    
-   if(!f)
+   if(!fp)
    {
      printf("File open error! \n");
    }
+   
+   int burst_t[20],process[20],waiting_t[20],taround_t[20];
+   int i=0,j,n=5,total=0,pos,temp;
+   float avg_waiting_t,avg_taround_t;
+   
+   printf("\nReading CPU_BURST.txt File\n");
+   
+   while((getc(fp)!=EOF)
+   {
+      fscanf(fp, "%d" , &burst_t[i];
+      if(burst_t[i]>0)
+      {
+         process[i]=i+1;
+         i++;
+      }
+   }
+   
+   n=i;
 }
