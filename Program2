@@ -55,4 +55,19 @@ int main()
          waiting_t[i]+=burst_t[i];
       total+=waiting_t[i];
    }
+   
+   avg_waiting_t=(float)total/n;
+   
+   total=0;
+   
+   printf("\nProcess\t Burst Time \tWaiting Time\tTurn Around Time");
+   
+   for(i=0;i<n;i++)
+   {
+      tarounf_t[i]=burst_t[i]+waiting_t[i];
+      total+=taround_t[i];
+      printf("\np%d\t\t  %d\t\t    %d\t\t\t%d",process[i],burst_t[i],waiting_t[i],taround_t[i]);
+   }
+   
+   avg_taround_t=(float)total/n;
 }
